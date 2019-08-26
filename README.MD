@@ -2,9 +2,9 @@
 
 _type safe, lightning fast & minimal GraphQL server template featuring_
 
-[gqlgen](https://gqlgen.com/feature-comparison/)  | the GraphQL toolkit |
-[gin](https://gin-gonic.com/)                     | the web-server      |
-[gorm](https://gorm.io/)                          | the ORM             |
+- [gqlgen](https://gqlgen.com/feature-comparison/)  the GraphQL toolkit 
+- [gin](https://gin-gonic.com/)                     the web-server      
+- [gorm](https://gorm.io/)                          the ORM             
 
 <img src="https://i.imgur.com/XrC77wp.png" border="0">
 
@@ -12,13 +12,17 @@ _type safe, lightning fast & minimal GraphQL server template featuring_
 
 ### get started
 
-Make sure the Go binaries and dep manager are installed first!
+Make sure the [Go binaries](https://golang.org/doc/install) and [dep manager](https://golang.github.io/dep/docs/installation.html) are installed first! 
 
 ```
 dep install
-go run src/cmd/server/main.go
+go run src/cmd/migration/up.go
+```
 
-or
+Now we can start running the server locally, or with Docker:
+
+```
+go run src/cmd/server/main.go
 
 ./compile.sh
 docker build -t gql .
