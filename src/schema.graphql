@@ -1,0 +1,43 @@
+scalar Time
+
+type Query {
+  feed: [Post!]!
+  drafts: [Post!]!
+  post(id: ID!): Post
+}
+
+type Mutation {
+  createDraft(input: CreateDraftInput): Post!
+  deletePost(input: DeletePostInput): Post
+  publish(input: PublishInput): Post
+}
+
+input CreateDraftInput {
+  title: String!
+  content: String!
+  authorEmail: String!
+}
+
+input DeletePostInput {
+  id: ID!
+}
+input PublishInput {
+  id: ID!
+}
+
+type Post {
+  id: ID!
+  createdAt: Time!
+  updatedAt: Time!
+  isPublished: Boolean!
+  title: String!
+  content: String!
+  authorId: ID!
+}
+
+type User {
+  id: ID!
+  email: String!
+  name: String!
+  posts: [Post!]!
+}
